@@ -1,19 +1,13 @@
-import productsData from "../hooks/product";
-
-const ProductList = () => {
-  return (
-    <div className="max-w-7xl mx-auto px-12 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
-      {productsData.map((product, index) => (
-        <div
-          key={index}
-          className="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 overflow-hidden flex flex-col"
-        > 
+  const ProductCard = ({ product }) => {
+    return (
+      <div className="w-full h-full max-w-full">
+        <div className="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 overflow-hidden flex flex-col">
           {/* Product Image */}
           <div className="relative w-full h-64 bg-gray-100 overflow-hidden">
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500"
             />
           </div>
 
@@ -34,10 +28,8 @@ const ProductList = () => {
             </div>
           </div>
         </div>
-      ))}
-    </div>
-  );
-};
+      </div>
+    );
+  };
 
-
-export default ProductList;
+  export default ProductCard;
