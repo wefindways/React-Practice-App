@@ -2,7 +2,7 @@ import iphone_14 from "../assets/iphone_14.png";
 import google_pixel from "../assets/google_pixel.png";
 import cannon_eos_camera from "../assets/cannon_eos_camera.png";
 
-const productsData = [
+const dynamicProducts = [
   {
     name: "Iphone 14",
     price: 999.99,
@@ -26,4 +26,4 @@ const productsData = [
   },
 ];
 
-export default productsData;
+export default dynamicProducts;
