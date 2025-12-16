@@ -1,10 +1,14 @@
-
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ filteredProducts }) => {
   return (
     <>
-      {filteredProducts.map((product, index) => (
-        <div key={index} className="w-full h-full max-w-full">
+      {filteredProducts.map((product) => (
+        <Link
+          to={`/details/${product.id}`}
+          key={product.id}
+          className="w-full h-full max-w-full"
+        >
           <div className="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 overflow-hidden flex flex-col">
             {/* Product Image */}
             <div className="relative w-full h-64 bg-gray-100 overflow-hidden">
@@ -32,7 +36,7 @@ const ProductCard = ({ filteredProducts }) => {
               </div>
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </>
   );

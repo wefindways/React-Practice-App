@@ -6,7 +6,7 @@ export const ProductProvider = ({ children }) => {
   const [product, setProduct] = useState([]);
 
   const handleAddProduct = (productsData) => {
-    setProduct((prev) => [...prev, productsData]);
+    setProduct((prev) => [...prev, { ...productsData, id: Date.now() }]);
   };
 
   return (
