@@ -4,10 +4,10 @@ import Modal from "../component/Modal";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 import { useProduct } from "../hooks/ProductContext";
-import dynamicProducts from "../hooks/useDynamic";
+import { dynamicProducts } from "../hooks/useDynamic";
 import Category from "../component/Category";
 
-const Home = () => {
+const HomePage = () => {
   const [open, setOpen] = useState(false);
   const { product, handleAddProduct } = useProduct();
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -68,4 +68,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
