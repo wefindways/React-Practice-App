@@ -14,7 +14,7 @@ const DetailsPage = () => {
 
   return (
     <Layout>
-      <div className="flex flex-col gap-5 max-w-full mx-auto mt-10 py-8 px-25">
+      <div className="flex flex-col gap-5 max-w-full mx-auto mt-10 pt-10 pb-20 px-25">
         <BackButton/>
         {selectedProducts ? (
           

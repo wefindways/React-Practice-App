@@ -24,7 +24,7 @@ const HomePage = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gray-100 py-10 px-10 md:px-25">
+      <div className=" bg-gray-100 pt-10 pb-20 px-10 md:px-25">
         <Category
           combinedProducts={combinedProducts}
           setSelectedCategory={setSelectedCategory}
