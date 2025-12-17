@@ -72,18 +72,20 @@ const Modal = ({ setOpen, onAdd, onClose }) => {
           />
         </div>
 
-        {/* <div className="space-y-1">
+        <div className="space-y-1">
           <label className="text-sm font-medium text-gray-600">
             Specification
           </label>
           <textarea
-            name="specification"
+            name="specs"
             placeholder="Enter specifications..."
+            value={form.specs}
+            onChange={handleOnChange}
             rows="3"
             className="w-full border border-gray-300 focus:border-pink-500 focus:ring focus:ring-pink-200 outline-none p-2.5 rounded-lg transition resize-none"
             required
           />
-        </div> */}
+        </div>
 
         <div className="grid grid-cols-3 gap-3">
           <div className="space-y-1">
