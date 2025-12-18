@@ -4,15 +4,18 @@ import Modal from "../component/Modal";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 import { useProduct } from "../hooks/ProductContext";
-import { dynamicProducts } from "../hooks/useDynamic";
-import Category from "../component/Category";
+import ProductCategory from "../component/ProductCategory";
+import useApi from "../hooks/useApi";
+import ProductLoading from "../component/ProductLoading";
+import ProductError from "../component/ProductError";
 
 const HomePage = () => {
   const [open, setOpen] = useState(false);
   const { product, handleAddProduct } = useProduct();
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const { apiProducts, loading, error } = useApi();
 
-  const combinedProducts = [...dynamicProducts, ...product];
+  const combinedProducts = [...apiProducts, ...product];
 
   const filteredProducts =
     selectedCategory === "All"
@@ -24,11 +27,14 @@ const HomePage = () => {
 
   return (
     <Layout>
-      <div className=" bg-gray-100 pt-10 pb-20 px-10 md:px-25">
-        <Category
+      <div className="bg-gray-100 pt-10 pb-20 px-10 md:px-25">
+        <ProductCategory
           combinedProducts={combinedProducts}
           setSelectedCategory={setSelectedCategory}
         />
+
+        <ProductLoading loading={loading} />
+        <ProductError error={error} />
 
         {/* Product card(s) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 xl:gap-15 place-items-center">
@@ -36,6 +42,8 @@ const HomePage = () => {
             combinedProducts={combinedProducts}
             setOpen={setOpen}
             filteredProducts={filteredProducts}
+            loading={loading}
+            error={error}
           />
 
           <div

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Category = ({ combinedProducts, setSelectedCategory }) => {
+const ProductCategory = ({ combinedProducts, setSelectedCategory }) => {
   const uniqueCategories = [
     "All",
     ...new Set(combinedProducts.map((product) => product.category)),
@@ -10,7 +10,7 @@ const Category = ({ combinedProducts, setSelectedCategory }) => {
 
   return (
     <>
-      <div className="flex items-center justify-between py-6">
+      <div className="flex items-center justify-between pt-6 pb-10">
         <div className="flex items-center gap-3 flex-wrap">
           {uniqueCategories.map((category, index) => (
             <button
@@ -35,4 +35,4 @@ const Category = ({ combinedProducts, setSelectedCategory }) => {
   );
 };
 
-export default Category;
+export default ProductCategory;
