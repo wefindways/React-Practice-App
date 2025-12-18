@@ -10,7 +10,7 @@ const ProductCard = ({ filteredProducts }) => {
           className="w-full h-full max-w-full"
         >
           <div className="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 overflow-hidden flex flex-col">
-            {/* Product Image */}
+            {/* Image */}
             <div className="relative w-full h-64 bg-gray-100 overflow-hidden">
               <img
                 src={product.image}
@@ -19,7 +19,7 @@ const ProductCard = ({ filteredProducts }) => {
               />
             </div>
 
-            {/* Product Details */}
+            {/* Details */}
             <div className="p-5 flex flex-col grow">
               <h2 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-1">
                 {product.name}
